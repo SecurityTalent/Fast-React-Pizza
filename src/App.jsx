@@ -2,7 +2,7 @@ import './App.css'
 import { createBrowserRouter, RouterProvider } from "react-router";
 
 import Home from "./ui/Home"
-import Menu from "./features/menu/Menu"
+import Menu, {Loader as MenuLoder} from "./features/menu/Menu"
 import Cart from "./features/cart/Cart"
 import CreateOrder from "./features/order/CreateOrder"
 import Order from "./features/order/Order"
@@ -13,6 +13,7 @@ import AppLayout from './ui/AppLayout';
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+
     children: [
       {
         path: "/",
@@ -20,7 +21,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/menu",
-        element: <Menu />
+        element: <Menu />,
+        loader: MenuLoder
       },
       {
         path: "/cart",
@@ -52,6 +54,7 @@ export default App
 
 
 
+// ! 55:00:00 Min
 
 
 
