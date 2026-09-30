@@ -54,23 +54,28 @@ Ensure you have [Node.js](https://nodejs.org/) installed (v18 or higher recommen
 ### Installation
 
 1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/SecurityTalent/Fast-React-Pizza.git
    cd Fast-React-Pizza
    ```
 
 2. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 3. **Start the development server:**
+
    ```bash
    npm run dev
    ```
+
    Open your browser and navigate to `http://localhost:5173/` (or the port shown in your terminal).
 
 4. **Build for production:**
+
    ```bash
    npm run build
    ```

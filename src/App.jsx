@@ -1,13 +1,14 @@
 import { createBrowserRouter, RouterProvider } from 'react-router'
-import Home from "./ui/Home"
-import Menu, {Loader as menuLoader} from "./features/Menu/Menu"
-import Cart from "./features/cart/Cart"
-import CreateOrder, {Action as createOrderAction} from "./features/order/CreateOrder"
-import Order, {Loader as orderLoader } from "./features/order/Order"
+import Home from './ui/Home'
+import Menu, { Loader as menuLoader } from './features/Menu/Menu'
+import Cart from './features/cart/Cart'
+import CreateOrder, {
+  Action as createOrderAction,
+} from './features/order/CreateOrder'
+import Order, { Loader as orderLoader } from './features/order/Order'
 import './App.css'
 import AppLayout from './ui/AppLayout'
 import Error from './ui/Error'
-
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,6 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
-
       },
       {
         path: '/menu',
@@ -27,13 +27,12 @@ const router = createBrowserRouter([
       },
       {
         path: '/cart',
-        element: <Cart />
+        element: <Cart />,
       },
       {
         path: '/order/new',
         element: <CreateOrder />,
         action: createOrderAction,
-        
       },
       {
         path: '/order/:orderId',
@@ -43,11 +42,8 @@ const router = createBrowserRouter([
       },
     ],
   },
-
-
-
 ])
-// 01:36 Min
+// 45:00 Min
 
 function App() {
   return <RouterProvider router={router} />

@@ -1,16 +1,14 @@
-import { Outlet } from "react-router";
-import { useNavigation } from "react-router";
+import { Outlet } from 'react-router'
+import { useNavigation } from 'react-router'
 
-import CartOverview from "../features/cart/CartOverview";
-import Header from "./Header";
-import Loader from "./Loader";
+import CartOverview from '../features/cart/CartOverview'
+import Header from './Header'
+import Loader from './Loader'
 
 function AppLayout() {
+  const navigation = useNavigation()
+  const isLoading = navigation.state === 'loading'
 
-
-  const navigation = useNavigation();
-  const isLoading = navigation.state === "loading";
-  
   // console.log(navigation)
 
   return (
@@ -20,13 +18,13 @@ function AppLayout() {
       <Header />
 
       <main>
-        <h1 style={{ color: "red" }}>Content</h1>
+        <h1 style={{ color: 'red' }}>Content</h1>
         <Outlet />
       </main>
 
       <CartOverview />
     </div>
-  );
+  )
 }
 
-export default AppLayout;
+export default AppLayout
