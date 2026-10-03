@@ -4,6 +4,7 @@ import { useNavigation } from 'react-router'
 import CartOverview from '../features/cart/CartOverview'
 import Header from './Header'
 import Loader from './Loader'
+import CreateUser from '../features/user/CreateUser'
 
 function AppLayout() {
   const navigation = useNavigation()
@@ -12,14 +13,15 @@ function AppLayout() {
   // console.log(navigation)
 
   return (
-    <div className="layout">
+    <div className="grid h-screen grid-rows-[auto_1fr_auto]  bg-cyan-800 ">
       {isLoading && <Loader />}
 
       <Header />
 
-      <main>
-        <h1 style={{ color: 'red' }}>Content</h1>
+      <main className='overflow-scroll'>
         <Outlet />
+
+        <CreateUser />
       </main>
 
       <CartOverview />

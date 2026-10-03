@@ -2,9 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router'
 import Home from './ui/Home'
 import Menu, { Loader as menuLoader } from './features/Menu/Menu'
 import Cart from './features/cart/Cart'
-import CreateOrder, {
-  Action as createOrderAction,
-} from './features/order/CreateOrder'
+import CreateOrder, { Action as createOrderAction } from './features/order/CreateOrder'
 import Order, { Loader as orderLoader } from './features/order/Order'
 import './App.css'
 import AppLayout from './ui/AppLayout'
@@ -43,7 +41,7 @@ const router = createBrowserRouter([
     ],
   },
 ])
-// 55:00 Min
+// 01:15:00 Min
 
 function App() {
   return <RouterProvider router={router} />
