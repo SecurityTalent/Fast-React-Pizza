@@ -78,15 +78,15 @@ function CreateOrder() {
             type="checkbox"
             name="priority"
             id="priority"
-            // value={withPriority}
-            // onChange={(e) => setWithPriority(e.target.checked)}
+          // value={withPriority}
+          // onChange={(e) => setWithPriority(e.target.checked)}
           />
           <label htmlFor="priority">Want to yo give your order priority?</label>
         </div>
 
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <button disabled={isSubmitting}>
+          <button disabled={isSubmitting} className='bg-yellow-400  uppercase text-stone-800 px-4 py-3 font-semibold tracking-wide rounded-full hover:bg-yellow-300 transition-colors duration-300 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-slate-600 '>
             {isSubmitting ? 'placing order...' : 'Order now'}
           </button>
         </div>
@@ -106,15 +106,16 @@ export async function Action({ request }) {
     cart: JSON.parse(data.cart),
     priority: data.priority === 'on',
   }
-  console.log(order)
-
-  const newOrder = await createOrder(order)
+  // console.log(order)
 
   const error = {}
-
   if (!isValidPhone(order.phone)) error.phone = 'Give me correct Phone Number'
-
   if (Object.keys(error).length > 0) return error
+
+
+
+  // const newOrder = await createOrder(order)
+  // return redirect(`/order/${newOrder.id}`)
 
   // const customer = formData.get("customer");
   // const phone = formData.get("phone");
@@ -126,7 +127,8 @@ export async function Action({ request }) {
   // console.log(address);
   // console.log(priority);
 
-  return redirect(`/order/${newOrder.id}`)
+  return null;
+
 }
 
 export default CreateOrder
