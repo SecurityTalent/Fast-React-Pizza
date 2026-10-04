@@ -13,16 +13,18 @@ function AppLayout() {
   // console.log(navigation)
 
   return (
-    <div className="grid h-screen grid-rows-[auto_1fr_auto]  bg-cyan-800 ">
+    <div className="grid h-screen grid-rows-[auto_1fr_auto]  bg-blue-200 ">
       {isLoading && <Loader />}
 
       <Header />
 
-      <main className='overflow-scroll'>
-        <Outlet />
+      <div className='overflow-scroll my-10'>
+        <main className=' max-w-3xl mx-auto'>
+          <Outlet />
 
-        <CreateUser />
-      </main>
+          <CreateUser />
+        </main>
+      </div>
 
       <CartOverview />
     </div>
