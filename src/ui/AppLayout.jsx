@@ -4,7 +4,6 @@ import { useNavigation } from 'react-router'
 import CartOverview from '../features/cart/CartOverview'
 import Header from './Header'
 import Loader from './Loader'
-import CreateUser from '../features/user/CreateUser'
 
 function AppLayout() {
   const navigation = useNavigation()
@@ -21,8 +20,6 @@ function AppLayout() {
       <div className='overflow-scroll my-10'>
         <main className=' max-w-3xl mx-auto'>
           <Outlet />
-
-          <CreateUser />
         </main>
       </div>
 
