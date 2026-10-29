@@ -42,7 +42,7 @@ const router = createBrowserRouter([
   },
 ])
 
-// 23:00:00 Min
+// 38:00:00 Min
 
 function App() {
   return <RouterProvider router={router} />
